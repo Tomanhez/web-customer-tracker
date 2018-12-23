@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.sql.*;
 /**
- * Servlet implementation class TestDbServlet
+ * Servlet implementation class TestDbServlet 
  */
 @WebServlet("/TestDbServlet")
 public class TestDbServlet extends HttpServlet {

@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css"/>
 <title>List Customers</title>
 </head>
 <body>
@@ -14,6 +15,12 @@
 
 	<div id="container">
 		<div id="content">
+		
+		<input type="button" value="Add Customer"
+				onclick="window.location.href='showFormForAdd'; return false;"
+				class="add-button"
+				/>
+		
 			<table>
 				<tr>
 					<th>First Name</th>

@@ -20,16 +20,24 @@ public class CustomerDAOImpl implements CustomerDAO {
 	
 	
 	@Override
-	@Transactional
+	//@Transactional - this Transactional is transferred in CustomerService
 	public List<Customer> getCustomers() {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		Query<Customer> theQuery = currentSession.createQuery("from Customer",Customer.class);
+		Query<Customer> theQuery = currentSession.createQuery("from Customer order by lastName",Customer.class);
 
 		
 		List<Customer> customer = theQuery.getResultList();
 		return customer;
+	}
+
+
+	@Override
+	public void saveCustomer(Customer theCustomer) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		currentSession.save(theCustomer);
 	}
 
 }
